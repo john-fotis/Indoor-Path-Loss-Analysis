@@ -5,8 +5,7 @@ close all;
 f = [800 1400 2000];
 dd1 = [1:0.2:6 6.4:0.4:14 14.5:0.5:20];
 dd2 = [1:0.2:6 6.4:0.4:14 14.5:0.5:20];
-numW1 = [0 4
-    ];
+numW1 = [0 4];
 numW2 = [0 4];
 numFl = [1 2];
 lossBuilding1 = zeros(9, length(dd1));
@@ -38,7 +37,7 @@ end
 figure;
 plot(dd2,lossBuilding1(1,:),'-go',dd2,lossBuilding1(2,:),'-gd',dd2,lossBuilding1(3,:),'-gs',dd2,lossBuilding1(4,:),'-ro',dd2,lossBuilding1(5,:),'-rd',dd2,lossBuilding1(6,:),'-rs',dd2,lossBuilding1(7,:),'-ko',dd2,lossBuilding1(8,:),'-kd',dd2,lossBuilding1(9,:),'-ks');
 title('Path Loss vs Distance, Building with wooden walls');
-legend('f=800MHz, Best case', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Best Case', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Best Case', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors');
+legend('f=800MHz, Best case', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Best Case', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Best Case', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors', 'Location', 'southeast');
 ylabel('Path Loss (dB)');
 xlabel('Distance (m)');
 grid on;
@@ -63,7 +62,7 @@ end
 figure;
 plot(dd1,lossBuilding2(1,:),'-go',dd1,lossBuilding2(2,:),'-gd',dd1,lossBuilding2(3,:),'-gs',dd1,lossBuilding2(4,:),'-ro',dd1,lossBuilding2(5,:),'-rd',dd1,lossBuilding2(6,:),'-rs',dd1,lossBuilding2(7,:),'-ko',dd1,lossBuilding2(8,:),'-kd',dd1,lossBuilding2(9,:),'-ks');
 title('Path Loss vs Distance, Building with concrete walls');
-legend('f=800MHz, Best case', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Best Case', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Best Case', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors');
+legend('f=800MHz, Best case', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Best Case', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Best Case', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors', 'Location', 'southeast');
 ylabel('Path Loss (dB)');
 xlabel('Distance (m)');
 grid on;

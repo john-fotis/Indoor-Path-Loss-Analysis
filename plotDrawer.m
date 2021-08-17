@@ -38,7 +38,7 @@ for i = 1:length(dd)
 end
 
 figure;
-plot(dd2,loss(1,:),'-go',dd2,loss(2,:),'-gd',dd2,loss(3,:),'-gs',dd2,loss(4,:),'-ro',dd2,loss(5,:),'-rd',dd2,loss(6,:),'-rs',dd2,loss(7,:),'-ko',dd2,loss(8,:),'-kd',dd2,loss(9,:),'-ks');
+plot(dd,loss(1,:),'-go',dd,loss(2,:),'-gd',dd,loss(3,:),'-gs',dd,loss(4,:),'-ro',dd,loss(5,:),'-rd',dd,loss(6,:),'-rs',dd,loss(7,:),'-ko',dd,loss(8,:),'-kd',dd,loss(9,:),'-ks');
 title('Path Loss vs Distance, Building with wooden walls');
 legend('f=800MHz, Best case', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Best Case', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Best Case', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors', 'Location', 'southeast');
 ylabel('Path Loss (dB)');

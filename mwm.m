@@ -26,11 +26,12 @@ function PL = mwm(f, d, numThin, numThick, numFloors)
     if (f >= 800) && (f <= 2000)
         % Calculate free space loss (dB)
         LFS = 20*log10(d) + 20*log10(f) + 20*log10((4*pi)/c);
-
+        % Prepare the floor-loss exponent
         exp =(numFloors+2)/(numFloors+1) - b;
-
+        % Main formula
         PL = LFS + Lc + numThin*thinWallLoss + numThick*thickWallLoss + numFloors^exp*Lf;
     else
+        % Indicate error
         PL = 10e14;
     end
 end

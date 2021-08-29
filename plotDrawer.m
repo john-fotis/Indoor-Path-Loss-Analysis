@@ -5,7 +5,7 @@ close all;
 f = [800 1400 2000];
 d = [3 6 9];
 numW1 = [0 4];
-numW2 = [0 4];
+numW2 = [0 2];
 numFl = [1 2];
 
 % Vectors
@@ -65,9 +65,9 @@ grid on;
 % Path loss vs Number of Walls
 for i = 1:length(walls)
     
-    wallLoss(1,i)= mwm(f(1), dd(2), 0, walls(i), 0);
-    wallLoss(2,i)= mwm(f(2), dd(2), 0, walls(i), 0);
-    wallLoss(3,i)= mwm(f(3), dd(2), 0, walls(i), 0);
+    wallLoss(1,i)= mwm(f(1), dd(2), walls(i), 0, 0);
+    wallLoss(2,i)= mwm(f(2), dd(2), walls(i), 0, 0);
+    wallLoss(3,i)= mwm(f(3), dd(2), walls(i), 0, 0);
 
 end
 

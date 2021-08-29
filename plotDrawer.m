@@ -11,13 +11,15 @@ numFl = [1 2];
 % Vectors
 ff = 800:50:2000;
 dd = [1:0.4:5 5.5:0.5:14 14.6:0.6:20];
-walls = 1:20;
+thinWalls = 1:20;
+thickWalls = 1:5;
 floors = 1:20;
 
 % Results
 fLoss = zeros(3, length(ff));
 dLoss = zeros(3, length(dd));
-wallLoss = zeros(3, length(walls));
+wallLoss1 = zeros(3, length(thinWalls));
+wallLoss2 = zeros(3, length(thickWalls));
 floorLoss = zeros(3, length(floors));
 totalFLoss = zeros(9, length(ff));
 totalDLoss = zeros(9, length(dd));
@@ -62,18 +64,35 @@ ylabel('Path Loss (dB)');
 xlabel('Distance (m)');
 grid on;
 
-% Path loss vs Number of Walls
-for i = 1:length(walls)
+% Path loss vs Number of Wooden Walls
+for i = 1:length(thinWalls)
     
-    wallLoss(1,i)= mwm(f(1), dd(2), walls(i), 0, 0);
-    wallLoss(2,i)= mwm(f(2), dd(2), walls(i), 0, 0);
-    wallLoss(3,i)= mwm(f(3), dd(2), walls(i), 0, 0);
+    wallLoss1(1,i)= mwm(f(1), dd(2), thinWalls(i), 0, 0);
+    wallLoss1(2,i)= mwm(f(2), dd(2), thinWalls(i), 0, 0);
+    wallLoss1(3,i)= mwm(f(3), dd(2), thinWalls(i), 0, 0);
 
 end
 
 figure;
-plot(walls,wallLoss(1,:),'-g',walls,wallLoss(2,:),'-m',walls,wallLoss(3,:),'-r', 'LineWidth', 3);
-title('Path Loss vs Number of walls');
+plot(thinWalls,wallLoss1(1,:),'-g',thinWalls,wallLoss1(2,:),'-m',thinWalls,wallLoss1(3,:),'-r', 'LineWidth', 3);
+title('Path Loss vs Number of wooden walls');
+legend('f=800MHz', 'f=1400MHz', 'f=2000MHz', 'Location', 'southeast');
+ylabel('Path Loss (dB)');
+xlabel('Number of walls');
+grid on;
+
+% Path loss vs Number of Concrete Walls
+for i = 1:length(thickWalls)
+    
+    wallLoss2(1,i)= mwm(f(1), dd(2), 0, thickWalls(i), 0);
+    wallLoss2(2,i)= mwm(f(2), dd(2), 0, thickWalls(i), 0);
+    wallLoss2(3,i)= mwm(f(3), dd(2), 0, thickWalls(i), 0);
+
+end
+
+figure;
+plot(thickWalls,wallLoss2(1,:),'-g',thickWalls,wallLoss2(2,:),'-m',thickWalls,wallLoss2(3,:),'-r', 'LineWidth', 3);
+title('Path Loss vs Number of concrete walls');
 legend('f=800MHz', 'f=1400MHz', 'f=2000MHz', 'Location', 'southeast');
 ylabel('Path Loss (dB)');
 xlabel('Number of walls');

@@ -16,7 +16,7 @@ function PL = mwm(f, d, numThin, numThick, numFloors)
 
     Lc = 0;                 % (dB)
     thinWallLoss = 3.4;     % (dB)
-    thickWallLoss = 6.9;    % (dB)
+    thickWallLoss = 36.9;   % (dB)
     b = 0.46;
     Lf = 18.3;              % (dB)
 

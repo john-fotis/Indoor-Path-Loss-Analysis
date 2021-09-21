@@ -1,5 +1,7 @@
 % *************************************************************************
 %
+%   Authors: Fotis Ioannis, Giannopoulou Aikaterini
+%
 %   Parameters:
 %   - f: frequency [MHz]
 %   - d: distance between Transmitter and Receiver [m]

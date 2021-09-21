@@ -1,3 +1,5 @@
+% Authors: Fotis Ioannis, Giannopoulou Aikaterini
+
 clc;
 close all;
 
@@ -6,7 +8,7 @@ f = [800 1400 2000];
 d = [3 6 9];
 numW1 = [0 4];
 numW2 = [0 2];
-numFl = [1 2];
+numFl = [0 2];
 
 % Vectors
 ff = 800:50:2000;
@@ -76,7 +78,7 @@ end
 figure;
 plot(thinWalls,wallLoss1(1,:),'-g',thinWalls,wallLoss1(2,:),'-m',thinWalls,wallLoss1(3,:),'-r', 'LineWidth', 3);
 title('Path Loss vs Number of wooden walls');
-legend('f=800MHz', 'f=1400MHz', 'f=2000MHz', 'Location', 'southeast');
+legend('f=800MHz,   d=6m', 'f=1400MHz, d=6m', 'f=2000MHz, d=6m', 'Location', 'southeast');
 ylabel('Path Loss (dB)');
 xlabel('Number of walls');
 grid on;
@@ -93,7 +95,7 @@ end
 figure;
 plot(thickWalls,wallLoss2(1,:),'-g',thickWalls,wallLoss2(2,:),'-m',thickWalls,wallLoss2(3,:),'-r', 'LineWidth', 3);
 title('Path Loss vs Number of concrete walls');
-legend('f=800MHz', 'f=1400MHz', 'f=2000MHz', 'Location', 'southeast');
+legend('f=800MHz,   d=6m', 'f=1400MHz, d=6m', 'f=2000MHz, d=6m', 'Location', 'southeast');
 ylabel('Path Loss (dB)');
 xlabel('Number of walls');
 grid on;
@@ -110,7 +112,7 @@ end
 figure;
 plot(floors,floorLoss(1,:),'-g',floors,floorLoss(2,:),'-m',floors,floorLoss(3,:),'-r', 'LineWidth', 3);
 title('Path Loss vs Number of floors');
-legend('f=800MHz', 'f=1400MHz', 'f=2000MHz', 'Location', 'southeast');
+legend('f=800MHz,   d=6m', 'f=1400MHz, d=6m', 'f=2000MHz, d=6m', 'Location', 'southeast');
 ylabel('Path Loss (dB)');
 xlabel('Number of floors');
 grid on;
@@ -138,7 +140,7 @@ end
 figure;
 plot(dd,totalDLoss(1,:),'-go',dd,totalDLoss(2,:),'-g*',dd,totalDLoss(3,:),'-gd',dd,totalDLoss(4,:),'-mo',dd,totalDLoss(5,:),'-m*',dd,totalDLoss(6,:),'-md',dd,totalDLoss(7,:),'-ro',dd,totalDLoss(8,:),'-r*',dd,totalDLoss(9,:),'-rd', 'LineWidth', 1.5);
 title('Path Loss vs Distance, Building with wooden walls');
-legend('f=800MHz, Best case', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Best Case', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Best Case', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors', 'Location', 'southeastoutside');
+legend('f=800MHz, Line of Sight', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Line of Sight', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Line of Sight', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors', 'Location', 'southeastoutside');
 ylabel('Path Loss (dB)');
 xlabel('Distance (m)');
 grid on;
@@ -166,7 +168,7 @@ end
 figure;
 plot(dd,totalDLoss(1,:),'-go',dd,totalDLoss(2,:),'-g*',dd,totalDLoss(3,:),'-gd',dd,totalDLoss(4,:),'-mo',dd,totalDLoss(5,:),'-m*',dd,totalDLoss(6,:),'-md',dd,totalDLoss(7,:),'-ro',dd,totalDLoss(8,:),'-r*',dd,totalDLoss(9,:),'-rd', 'LineWidth', 1.5);
 title('Path Loss vs Distance, Building with concrete walls');
-legend('f=800MHz, Best case', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple floors', 'f=1400MHz, Best Case', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Best Case', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors', 'Location', 'southeastoutside');
+legend('f=800MHz, Line of Sight', 'f=800MHz, Multiple Walls', 'f=800MHz, Multiple Floors', 'f=1400MHz, Line of Sight', 'f=1400MHz, Multiple Walls', 'f=1400MHz, Multiple Floors','f=2000MHz, Line of Sight', 'f=2000MHz, Multiple Walls', 'f=2000MHz, Multiple Floors', 'Location', 'southeastoutside');
 ylabel('Path Loss (dB)');
 xlabel('Distance (m)');
 grid on;
@@ -194,7 +196,7 @@ end
 figure;
 plot(ff,totalFLoss(1,:),'-go',ff,totalFLoss(2,:),'-g*',ff,totalFLoss(3,:),'-gd',ff,totalFLoss(4,:),'-mo',ff,totalFLoss(5,:),'-m*',ff,totalFLoss(6,:),'-md',ff,totalFLoss(7,:),'-ro',ff,totalFLoss(8,:),'-r*',ff,totalFLoss(9,:),'-rd', 'LineWidth', 1.5);
 title('Path Loss vs Frequency, Building with wooden walls');
-legend('d=3m, Best case', 'd=3m, Multiple Walls', 'd=3m, Multiple floors', 'd=6m, Best Case', 'd=6m, Multiple Walls', 'd=6m, Multiple Floors','d=9m, Best Case', 'd=9m, Multiple Walls', 'd=9m, Multiple Floors', 'Location', 'southeastoutside');
+legend('d=3m, Line of Sight', 'd=3m, Multiple Walls', 'd=3m, Multiple Floors', 'd=6m, Line of Sight', 'd=6m, Multiple Walls', 'd=6m, Multiple Floors','d=9m, Line of Sight', 'd=9m, Multiple Walls', 'd=9m, Multiple Floors', 'Location', 'southeastoutside');
 ylabel('Path Loss (dB)');
 xlabel('Frequency (MHz)');
 grid on;
@@ -222,7 +224,7 @@ end
 figure;
 plot(ff,totalFLoss(1,:),'-go',ff,totalFLoss(2,:),'-g*',ff,totalFLoss(3,:),'-gd',ff,totalFLoss(4,:),'-mo',ff,totalFLoss(5,:),'-m*',ff,totalFLoss(6,:),'-md',ff,totalFLoss(7,:),'-ro',ff,totalFLoss(8,:),'-r*',ff,totalFLoss(9,:),'-rd', 'LineWidth', 1.5);
 title('Path Loss vs Frequency, Building with concrete walls');
-legend('d=3m, Best case', 'd=3m, Multiple Walls', 'd=3m, Multiple floors', 'd=6m, Best Case', 'd=6m, Multiple Walls', 'd=6m, Multiple Floors','d=9m, Best Case', 'd=9m, Multiple Walls', 'd=9m, Multiple Floors', 'Location', 'southeastoutside');
+legend('d=3m, Line of Sight', 'd=3m, Multiple Walls', 'd=3m, Multiple Floors', 'd=6m, Line of Sight', 'd=6m, Multiple Walls', 'd=6m, Multiple Floors','d=9m, Line of Sight', 'd=9m, Multiple Walls', 'd=9m, Multiple Floors', 'Location', 'southeastoutside');
 ylabel('Path Loss (dB)');
 xlabel('Frequency (MHz)');
 grid on;

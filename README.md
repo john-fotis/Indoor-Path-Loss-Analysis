@@ -1,5 +1,4 @@
 # Wireless-Links-Indoor-Path-Loss-Analysis
-Study &amp; analysis on COST-231 multi-wall model, an indoor path-loss empirical model in wireless links sector
 
 ![Page 1](https://github.com/john-fotis/Indoor-Path-Loss-Analysis/blob/main/github_presentation/1.png)
 

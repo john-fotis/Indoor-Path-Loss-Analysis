@@ -1,5 +1,3 @@
-# Wireless-Links-Indoor-Path-Loss-Analysis
-
 ![Page 1](https://github.com/john-fotis/Indoor-Path-Loss-Analysis/blob/main/github_presentation/1.png)
 
 ![Page 2](https://github.com/john-fotis/Indoor-Path-Loss-Analysis/blob/main/github_presentation/2.png)

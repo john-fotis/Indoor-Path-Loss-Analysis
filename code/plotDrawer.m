@@ -17,7 +17,7 @@ thinWalls = 1:20;
 thickWalls = 1:5;
 floors = 1:20;
 
-% Results
+% Result vectors
 fLoss = zeros(3, length(ff));
 dLoss = zeros(3, length(dd));
 wallLoss1 = zeros(3, length(thinWalls));
@@ -25,12 +25,6 @@ wallLoss2 = zeros(3, length(thickWalls));
 floorLoss = zeros(3, length(floors));
 totalFLoss = zeros(9, length(ff));
 totalDLoss = zeros(9, length(dd));
-
-% =============== Custom parameters ===============
-%f = input('Enter Signal Frequency [800-2000MHz]: ');
-%numW1 = input('Enter number of thin walls: ');
-%numW2 = input('Enter number of thick walls: ');
-%numFl = input('Enter number of floors: ');
 
 % Path Loss vs Frequency
 for i = 1:length(ff)
